@@ -1,3 +1,7 @@
+**NOTE**: this is not intended to be a ready-to-use product. Please think of this as a reference implementation. I just put it up here to test various ideas floating around [this thread][electron-673], nothing more.
+
+[electron-673]: https://github.com/electron/electron/issues/673
+
 # Lepton Version Manager
 
 Requires Python 3.4+. [pipsi][] is recommended:
@@ -33,8 +37,25 @@ binaries are passed as `$VARIABLE`-like strings (uppercase and `s/-/_/g`).
 }
 ```
 
-For now, Lepton only supports strict versioning (e. g. `0.15.2` and not
-`>=0.15.2`).
+Lepton supports SemVer and the [advanced range syntax][ars]:
+
+```json
+{
+  "engines": {
+    "electron": "1.x",
+    "node": ">=0.10.3 <0.12",
+    "python": "^3.4.3",
+    "bash": "*"
+  }
+}
+```
+
+[ars]: https://docs.npmjs.com/misc/semver#advanced-range-syntax
+
+All available particles are hosted [here][particles]. For now, it's only
+Electron, but more will be added soon (nw.js? node?)
+
+[particles]: https://iamale.github.io/lepton-particles/
 
 ## Particles
 
